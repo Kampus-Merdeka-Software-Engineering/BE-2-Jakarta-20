@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { postnewContact } from "../controllers/contactsControllers.js";
-import { getnewContact } from "../controllers/contactsControllers.js";
+import {
+  postnewContact,
+  getnewContact,
+} from "../controllers/contactsControllers.js";
 
 const router = Router();
 
-router.get("/contacts", getnewContact);
-router.post("/contacts", postnewContact);
+router.get("/", getnewContact);
+router.post("/", postnewContact);
 
 export default router;
