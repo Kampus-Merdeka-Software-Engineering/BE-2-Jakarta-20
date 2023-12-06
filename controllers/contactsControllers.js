@@ -15,3 +15,12 @@ export const postnewContact = async (request, response) => {
     data: contact,
   });
 };
+
+/**
+ *
+ * @param {express.Request} request
+ * @param {express.Response} response
+ */
+export const getnewContact = (_, response) => {
+  response.send("This is the contact page.");
+};
