@@ -6,7 +6,7 @@ import {
 
 const router = Router();
 
-router.get("/", getnewContact);
-router.post("/", postnewContact);
+router.get("/contacts", getnewContact);
+router.post("/contacts", postnewContact);
 
 export default router;
