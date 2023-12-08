@@ -11,5 +11,5 @@ export const postnewContact = async (request, response) => {
 
   await newContact(name, email, subject, message);
 
-  console.log("Data Submitted successfully");
+  response.status(201).send("Data submitted successfully");
 };
