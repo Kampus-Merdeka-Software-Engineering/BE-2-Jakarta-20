@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.raw());
 app.use(bodyParser.json())
 
-app.use("/contacts", contactsRoutes);
+app.use("/", contactsRoutes);
 
 startSequelize();
 
