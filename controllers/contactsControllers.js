@@ -9,10 +9,9 @@ import { newContact } from "../services/contactsServices.js";
 export const postnewContact = async (request, response) => {
   const { name, email, subject, message } = request.body;
 
-  const contact = await newContact(name, email, subject, message);
+  await newContact(name, email, subject, message);
 
   response.json({
-    data: contact,
     message: "Data Submitted successfully",
   });
 };
