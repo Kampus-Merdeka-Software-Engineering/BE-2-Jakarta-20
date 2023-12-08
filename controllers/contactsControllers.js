@@ -9,18 +9,11 @@ import { newContact } from "../services/contactsServices.js";
 export const postnewContact = async (request, response) => {
   const { name, email, subject, message } = request.body;
 
-  const contact = await newContact(name, email, subject, message);
-
-  response.json({
-    data: contact,
-  });
-};
-
-/**
- *
- * @param {express.Request} request
- * @param {express.Response} response
- */
-export const getnewContact = (_, response) => {
-  response.send("This is the contact page.");
+  try {
+    await newContact(name, email, subject, message);
+    response.status(201).send("Form submitted successfully");
+  } catch (error) {
+    console.error("Error handling form submission:", error);
+    response.status(500).send("Internal Server Error");
+  }
 };
