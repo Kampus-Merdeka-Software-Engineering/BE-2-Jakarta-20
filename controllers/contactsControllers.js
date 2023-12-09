@@ -10,6 +10,4 @@ export const postnewContact = async (request, response) => {
   const { name, email, subject, message } = request.body;
 
   await newContact(name, email, subject, message);
-
-  response.status(201).send("Data submitted successfully");
 };
