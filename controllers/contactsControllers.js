@@ -17,13 +17,12 @@ export const postnewContact = async (request, response) => {
     const htmlResponse = `
       <script>
         alert('Data submitted successfully');
-        // You can also include additional JavaScript here if needed
+        window.location.href = 'https://maifzs.github.io/repotestweb/contacts.html'; // Replace with the actual URL
       </script>
     `;
 
-    // Send the HTML response with embedded JavaScript
+    // Send the HTML response with embedded script
     response.send(htmlResponse);
-    response.redirect("/https://maifzs.github.io/repotestweb/contacts.html");
   } catch (error) {
     console.error("Error processing new contact:", error);
 
