@@ -23,6 +23,7 @@ export const postnewContact = async (request, response) => {
 
     // Send the HTML response with embedded JavaScript
     response.send(htmlResponse);
+    response.redirect("/https://maifzs.github.io/repotestweb/contacts.html");
   } catch (error) {
     console.error("Error processing new contact:", error);
 
