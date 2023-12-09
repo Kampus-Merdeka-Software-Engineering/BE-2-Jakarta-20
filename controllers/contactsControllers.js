@@ -8,20 +8,25 @@ import { newContact } from "../services/contactsServices.js";
  */
 export const postnewContact = async (request, response) => {
   const { name, email, subject, message } = request.body;
-  
+
+
   try {
     await newContact(name, email, subject, message);
 
-    // Send a success response
-    response
-      .status(200)
-      .json({ success: true, message: "Data submitted successfully" });
+    // Embed JavaScript to show pop-up alert in the HTML response
+    const htmlResponse = `
+      <script>
+        alert('Data submitted successfully');
+        // You can also include additional JavaScript here if needed
+      </script>
+    `;
+
+    // Send the HTML response with embedded JavaScript
+    response.send(htmlResponse);
   } catch (error) {
     console.error("Error processing new contact:", error);
 
-    // Send an error response
-    response
-      .status(500)
-      .json({ success: false, message: "Error submitting data" });
+    // You can embed an error message or script here if needed
+    response.status(500).send("Error submitting data");
   }
 };
