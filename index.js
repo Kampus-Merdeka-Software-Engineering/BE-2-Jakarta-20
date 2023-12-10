@@ -5,7 +5,7 @@ import cors from "cors";
 import { startSequelize } from "./utils/startSequelize.js";
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT | 3000;
 
 import contactsRoutes from "./routes/contactsRoutes.js";
 
