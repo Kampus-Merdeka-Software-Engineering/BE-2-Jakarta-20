@@ -8,6 +8,7 @@ const app = express();
 const port = process.env.PORT | 3000;
 
 import contactsRoutes from "./routes/contactsRoutes.js";
+import aboutRoutes from "./routes/aboutRoutes.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.raw());
 app.use(bodyParser.json())
 
 app.use("/", contactsRoutes);
+app.use("/", aboutRoutes);
 
 startSequelize();
 
