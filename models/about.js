@@ -11,6 +11,8 @@ const Profile = sequelize.define("Profile", {
   name: DataTypes.STRING,
   info: DataTypes.STRING,
   linkedin: DataTypes.STRING,
+  createdAt: DataTypes.DATE,
+  updatedAt: DataTypes.DATE,
 });
 
 export default Profile;
